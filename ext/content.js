@@ -13,7 +13,7 @@
 
 function poll() {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/api/v1.0/me/messages/$count?$filter=IsRead%20eq%20false");
+    xhr.open("GET", "https://outlook.office365.com/api/v1.0/me/messages/$count?$filter=IsRead%20eq%20false");
     xhr.onload = function() {
         if (this.status == 200) {
             var count = this.response;
