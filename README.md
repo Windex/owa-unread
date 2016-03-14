@@ -6,6 +6,9 @@ A Google Chrome extension that shows the unread message count in your inbox for 
 
 ## Release Notes
 
+0.9.2 - Bugfix Release
+* Fix to support change in inbox hash path URL
+
 0.9.1 - Bugfix Release
 * Added outlook.office.com domain support
 * API calls only to outlook.office365.com to deal with oauth2 requirements

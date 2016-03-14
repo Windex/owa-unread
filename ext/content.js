@@ -29,7 +29,8 @@ function poll() {
     xhr.send();
 }
 
-if (document.location.hash.indexOf("#path=/mail") > -1) {
+if (document.location.hash.indexOf("#path=/mail") > -1 ||
+    document.location.hash.indexOf("#path=%2fmail") > -1) {
     Tinycon.setBubble();
     var ico = chrome.extension.getURL("favicon.ico");
     Tinycon.setImage(ico);

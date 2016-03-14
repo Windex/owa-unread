@@ -1,6 +1,6 @@
 {
     "name": "Outlook Web App Unread Mail Count",
-    "version": "0.9.1",
+    "version": "0.9.2",
     "description":
         "Shows the unread message count in your inbox for Outlook Web App",
     "icons": {"128": "128.png"},
