@@ -6,6 +6,9 @@ A Google Chrome extension that shows the unread message count in your inbox for 
 
 ## Release Notes
 
+0.9.3 - Bugfix Release
+* Fix to support case change of OWA in URL
+
 0.9.2 - Bugfix Release
 * Fix to support change in inbox hash path URL
 
