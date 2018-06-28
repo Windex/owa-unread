@@ -29,12 +29,23 @@ function poll() {
     xhr.send();
 }
 
-if (document.location.hash.indexOf("#path=/mail") > -1 ||
-    document.location.hash.indexOf("#path=%2fmail") > -1) {
-    Tinycon.setBubble();
-    var ico = chrome.extension.getURL("favicon.ico");
-    Tinycon.setImage(ico);
-    poll();
-    window.setInterval(poll, 15000);
-    console.log("OWA Unread Mail Count extension loaded for " + document.location.hash);
+function init() {
+    console.log("OWA Unread Mail Count initializing..." + initRetries);
+    if (document.location.href.search("path=[\/|%][2f]*mail") > -1) {
+        window.clearInterval(initId);
+        Tinycon.setBubble();
+        var ico = chrome.extension.getURL("favicon.ico");
+        Tinycon.setImage(ico);
+        window.setInterval(poll, 15000);
+        poll();
+        console.log("OWA Unread Mail Count extension loaded for " + document.location.href);
+    } else if (initRetries-- <= 0) {
+        console.log("OWA Unread Mail Count failed to initialize; giving up");
+        window.clearInterval(initId);
+    }
 }
+
+var initRetries = 10;
+var initId = window.setInterval(init, 5000);
+init();
+

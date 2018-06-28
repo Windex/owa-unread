@@ -1,8 +1,8 @@
 {
-    "name": "Outlook Web App Unread Mail Count",
-    "version": "0.9.3",
+    "name": "OWA Unread Mail Count",
+    "version": "0.9.4",
     "description":
-        "Shows the unread message count in your inbox for Outlook Web App",
+        "Shows the unread message count in your inbox",
     "icons": {"128": "128.png"},
     "content_scripts": [ {
         "js": [ "content.js" ],
